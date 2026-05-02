@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Crumbs Bakery | Standard Package</title>
+<meta name="description" content="Birthday cakes, wedding cakes and custom orders in Nakuru. Order online easily.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;}
+body{background:#faf7f2;color:#222;}
+header{background:#ffffff;padding:18px 30px;box-shadow:0 2px 10px rgba(0,0,0,0.08);position:sticky;top:0;z-index:10;}
+nav{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:auto;}
+nav h1{color:#d35400;font-size:24px;}
+nav a{text-decoration:none;color:#333;margin-left:18px;font-weight:600;}
+.hero{background:url('https://images.unsplash.com/photo-1519869325930-281384150729') center/cover;height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.45);}
+.hero-content{position:relative;z-index:1;max-width:700px;padding:20px;}
+.hero h2{font-size:42px;margin-bottom:12px;}
+.hero p{font-size:18px;margin-bottom:20px;}
+.btn{display:inline-block;background:#d35400;color:white;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold;}
+.section{max-width:1100px;margin:auto;padding:60px 20px;}
+.section h2{text-align:center;margin-bottom:30px;font-size:30px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.card{background:white;border-radius:14px;overflow:hidden;box-shadow:0 5px 14px rgba(0,0,0,0.08);}
+.card img{width:100%;height:180px;object-fit:cover;}
+.card p{padding:15px;font-weight:600;}
+.pricing{background:white;border-radius:14px;padding:25px;box-shadow:0 5px 14px rgba(0,0,0,0.08);}
+.pricing ul{line-height:2;}
+form{background:white;padding:30px;border-radius:14px;box-shadow:0 5px 14px rgba(0,0,0,0.08);max-width:700px;margin:auto;}
+input,textarea,select{width:100%;padding:14px;margin:10px 0;border:1px solid #ddd;border-radius:8px;}
+button{width:100%;background:#d35400;color:white;border:none;padding:14px;border-radius:8px;font-size:16px;cursor:pointer;}
+footer{background:#1f1f1f;color:white;text-align:center;padding:25px;margin-top:40px;}
+</style>
+</head>
+<body><header>
+  <nav>
+    <h1>Sweet Crumbs Bakery</h1>
+    <div>
+      <a href="#cakes">Cakes</a>
+      <a href="#pricing">Prices</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header><section class="hero">
+  <div class="hero-content">
+    <h2>Fresh Cakes for Every Celebration</h2>
+    <p>Birthday cakes, wedding cakes and custom designs delivered fast in Nakuru.</p>
+    <a href="#order" class="btn">Order Now</a>
+  </div>
+</section><section class="section" id="cakes">
+  <h2>Popular Cake Designs</h2>
+  <div class="grid">
+    <div class="card"><img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c"><p>Birthday Cake</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a"><p>Chocolate Deluxe</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e"><p>Custom Designer Cake</p></div>
+  </div>
+</section><section class="section" id="pricing">
+  <h2>Starting Prices</h2>
+  <div class="pricing">
+    <ul>
+      <li>Birthday Cakes — from KSh 1,500</li>
+      <li>Wedding Cakes — from KSh 5,000</li>
+      <li>Custom Cakes — from KSh 2,500</li>
+      <li>Cupcakes — from KSh 100 each</li>
+    </ul>
+  </div>
+</section><section class="section" id="order">
+  <h2>Quick Order Form</h2>
+  <form onsubmit="sendOrder(); return false;">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+    <select id="cake">
+      <option>Birthday Cake</option>
+      <option>Wedding Cake</option>
+      <option>Custom Cake</option>
+    </select>
+    <textarea id="details" placeholder="Describe your order"></textarea>
+    <button type="submit">Send Order via WhatsApp</button>
+  </form>
+</section><section class="section" id="contact">
+  <h2>Contact Us</h2>
+  <p style="text-align:center;line-height:2;">📍 Nakuru CBD, Kenya<br>📞 +254700123456<br>📱 WhatsApp Orders Available Daily</p>
+</section><footer>
+  <p>© 2026 Sweet Crumbs Bakery | Standard Website Package</p>
+</footer><script>
+function sendOrder(){
+  const name=document.getElementById('name').value;
+  const phone=document.getElementById('phone').value;
+  const cake=document.getElementById('cake').value;
+  const details=document.getElementById('details').value;
+  const msg=`Hello, my name is ${name}. I want to order a ${cake}. Details: ${details}. My number is ${phone}.`;
+  window.open('https://wa.me/254700123456?text='+encodeURIComponent(msg),'_blank');
+}
+</script></body>
+</html>
